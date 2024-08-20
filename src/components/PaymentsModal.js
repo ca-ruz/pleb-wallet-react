@@ -3,6 +3,8 @@ import Modal from "react-modal";
 import axios from "axios";
 import "./PaymentsModal.css";
 
+const apiKey = process.env.REACT_APP_API_KEY;
+
 const customStyles = {
  content: {
    top: "20%",
@@ -31,7 +33,7 @@ const PaymentsModal = ({ modalState, setModalState }) => {
       e.preventDefault();
    
       const headers = {
-        "X-Api-Key": "52cac212fc664da393ac45df991fdb84",
+        "X-Api-Key": apiKey ,
       };
       const data = {
         bolt11: formData.invoiceToPay,
